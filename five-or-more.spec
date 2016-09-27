@@ -1,12 +1,12 @@
 Summary:	"Five or more" game for GNOME
 Summary(pl.UTF-8):	Gra "pięć lub więcej" dla GNOME
 Name:		five-or-more
-Version:	3.18.0
+Version:	3.22.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/five-or-more/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	f2f6fe100d49a4b9ba75d99675e4dc03
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/five-or-more/3.22/%{name}-%{version}.tar.xz
+# Source0-md5:	ba87a7a95fce7a6884397ae10185050e
 URL:		https://wiki.gnome.org/Apps/Five%20or%20more
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
@@ -80,6 +80,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/five-or-more
 %{_desktopdir}/five-or-more.desktop
 %{_iconsdir}/hicolor/*x*/apps/five-or-more.png
-%{_iconsdir}/hicolor/scalable/apps/five-or-more.svg
-%{_iconsdir}/hicolor/scalable/apps/five-or-more-symbolic.svg
+%{_iconsdir}/hicolor/symbolic/apps/five-or-more-symbolic.svg
 %{_mandir}/man6/five-or-more.6*
