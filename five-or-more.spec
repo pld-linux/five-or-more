@@ -1,19 +1,19 @@
 Summary:	"Five or more" game for GNOME
 Summary(pl.UTF-8):	Gra "pięć lub więcej" dla GNOME
 Name:		five-or-more
-Version:	3.22.2
+Version:	3.28.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/five-or-more/3.22/%{name}-%{version}.tar.xz
-# Source0-md5:	a9d348a26c9c8f584bff90e3ddd66551
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/five-or-more/3.28/%{name}-%{version}.tar.xz
+# Source0-md5:	11b3893d00bc42e040ce83d9532ee2f8
 URL:		https://wiki.gnome.org/Apps/Five%20or%20more
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	gnome-common
 BuildRequires:	glib2-devel >= 1:2.32
-BuildRequires:	gtk+3-devel >= 3.12.0
+BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	intltool >= 0.50
 BuildRequires:	librsvg-devel >= 2.32.0
 BuildRequires:	pkgconfig
@@ -21,7 +21,7 @@ BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	glib2 >= 1:2.32
-Requires:	gtk+3 >= 3.12.0
+Requires:	gtk+3 >= 3.20.0
 Requires:	hicolor-icon-theme
 Requires:	librsvg >= 2.32.0
 Provides:	gnome-games-glines = 1:%{version}-%{release}
