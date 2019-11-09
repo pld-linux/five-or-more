@@ -1,28 +1,34 @@
 Summary:	"Five or more" game for GNOME
 Summary(pl.UTF-8):	Gra "pięć lub więcej" dla GNOME
 Name:		five-or-more
-Version:	3.28.0
+Version:	3.32.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/five-or-more/3.28/%{name}-%{version}.tar.xz
-# Source0-md5:	11b3893d00bc42e040ce83d9532ee2f8
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/five-or-more/3.32/%{name}-%{version}.tar.xz
+# Source0-md5:	507e662de3fada6c058c411097add343
 URL:		https://wiki.gnome.org/Apps/Five%20or%20more
-BuildRequires:	appstream-glib-devel
-BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11
-BuildRequires:	gnome-common
+BuildRequires:	appstream-glib
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.32
 BuildRequires:	gtk+3-devel >= 3.20.0
-BuildRequires:	intltool >= 0.50
+BuildRequires:	libgee-devel >= 0.8
+BuildRequires:	libgnome-games-support-devel >= 1
 BuildRequires:	librsvg-devel >= 2.32.0
+BuildRequires:	meson >= 0.43.0
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	vala
+BuildRequires:	vala-libgee >= 0.8
+BuildRequires:	vala-librsvg >= 2.32.0
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	glib2 >= 1:2.26.0
+Requires(post,postun):	glib2 >= 1:2.32
 Requires:	glib2 >= 1:2.32
 Requires:	gtk+3 >= 3.20.0
 Requires:	hicolor-icon-theme
+Requires:	libgee >= 0.8
 Requires:	librsvg >= 2.32.0
 Provides:	gnome-games-glines = 1:%{version}-%{release}
 Obsoletes:	gnome-games-glines < 1:3.8.0
@@ -42,21 +48,14 @@ koloru, co powoduje zniknięcie ich i zdobycie punktów.
 %setup -q
 
 %build
-%{__intltoolize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure \
-	--disable-silent-rules
+%meson build
 
-%{__make}
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{name} --with-gnome
 
@@ -75,10 +74,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS
 %attr(755,root,root) %{_bindir}/five-or-more
-%{_datadir}/appdata/five-or-more.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.five-or-more.gschema.xml
 %{_datadir}/five-or-more
-%{_desktopdir}/five-or-more.desktop
-%{_iconsdir}/hicolor/*x*/apps/five-or-more.png
-%{_iconsdir}/hicolor/symbolic/apps/five-or-more-symbolic.svg
+%{_datadir}/metainfo/org.gnome.five-or-more.appdata.xml
+%{_desktopdir}/org.gnome.five-or-more.desktop
+%{_iconsdir}/hicolor/*x*/apps/org.gnome.five-or-more.png
+%{_iconsdir}/hicolor/symbolic/apps/org.gnome.five-or-more-symbolic.svg
 %{_mandir}/man6/five-or-more.6*
