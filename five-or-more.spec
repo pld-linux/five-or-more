@@ -1,12 +1,12 @@
 Summary:	"Five or more" game for GNOME
 Summary(pl.UTF-8):	Gra "pięć lub więcej" dla GNOME
 Name:		five-or-more
-Version:	3.32.0
+Version:	3.32.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/five-or-more/3.32/%{name}-%{version}.tar.xz
-# Source0-md5:	507e662de3fada6c058c411097add343
+# Source0-md5:	36e67775201a840a297f934da94a6300
 URL:		https://wiki.gnome.org/Apps/Five%20or%20more
 BuildRequires:	appstream-glib
 BuildRequires:	gettext-tools
